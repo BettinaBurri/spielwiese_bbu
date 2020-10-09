@@ -1,0 +1,88 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true,
+		"node_modules/": true,
+		"build/": true,
+		"dist/": true,
+		"**/__pycache__/": true,
+		"coverage/": true,
+		".pytest_cache/": true,
+		".idea/": true,
+		"src/django/coinarchive/static/**/js": true
+	},
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.git/subtree-cache/**": true,
+		"**/node_modules/*/**": true
+	},
+	// Tabs and Spaces
+	"editor.renderWhitespace": "all",
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"[javascript]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": false
+	},
+	"[python]": {
+		"editor.tabSize": 4,
+		"editor.insertSpaces": true
+	},
+
+	// Javascript linting
+	"eslint.enable": true,
+	"eslint.options": { "configFile": "./conf/eslintrc.js" },
+	"eslint.workingDirectories": [ "../src/react/" ],
+
+	// Python path
+	"python.pythonPath": "/apps/venv/bin/python",
+	"python.sortImports.args": [
+		"-rc",
+		"--atomic"
+	],
+
+	// Pythion linting
+	"python.linting.enabled": true,
+	"python.linting.pylintPath": "/apps/venv/bin/pylint",
+	"python.linting.pylintUseMinimalCheckers": false,
+	"python.linting.pylintEnabled": true,
+	"python.linting.pylintArgs": [
+		"--rcfile=conf/pylintrc",
+		"--load-plugins",
+		"pylint_django"
+	],
+	"python.linting.pycodestyleEnabled": false,
+
+	// Python testing
+	"python.testing.pytestEnabled": true,
+	"python.testing.pytestArgs": [
+		"-rfesxXpP",
+		// -r chars			show extra test summary info as specified by chars:
+		//								(f)ailed, (E)rror, (s)kipped, (x)failed, (X)passed,
+		//								(p)assed, (P)assed with output, (a)ll except passed
+		//								(p/P), or (A)ll. (w)arnings are enabled by default
+		//								(see --disable-warnings).
+
+		// --ds Set DJANGO_SETTINGS_MODULE
+		"--ds=django_react.settings",
+
+		// the netstyle plugin will read the project from build/test.conf and set
+		// --ds and the base path for the project
+		// build/test.conf should be created when you run 'npm run $project-name$'
+		// e.g. npm run prolife
+		// "-p",
+		// "pytest_netstyle",
+		// "--disable-warnings",
+		//"--junitxml=/apps/prolife/release/src/django/tests/testresults.xml",
+	],
+	"python.testing.unittestEnabled": false,
+	"python.testing.nosetestsEnabled": false,
+	// Fix python refactoring:
+	// https://github.com/Microsoft/vscode-python/issues/3867
+	// https://github.com/microsoft/vscode-python/issues/52
+	"python.jediEnabled": false,
+	"python.analysis.disabled": ["import-error"],
+    "pythonTestExplorer.testFramework": "pytest",
+    "python.languageServer": "Microsoft"
+}

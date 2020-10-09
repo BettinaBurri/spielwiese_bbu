@@ -1,0 +1,215 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Prolife: JsWatch",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"type": "npm",
+			"script": "watch --prolife",
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"isBackground": false,
+			"problemMatcher": {
+				"owner": "webpack",
+				"fileLocation": ["relative", "${workspaceRoot}"],
+				"severity": "error",
+				"pattern": [
+					{
+						"regexp": "ERROR in (.*)",	
+						"file" : 1 
+					},
+					{
+						"regexp": "\\((\\d+),(\\d+)\\):(.*)",
+						"line":1,
+						"column": 2,
+						"message": 3
+					}
+				],
+				"background": {
+					"beginsPattern": "File change detected. Starting incremental compilation...",
+					"endsPattern": "Compilation complete. Watching for file changes."
+				}
+			}
+		},
+		{
+			"label": "Prolife: JsLint",
+			"group": "none",
+			"type": "npm",
+			"script": "js:lint --prolife",
+			"problemMatcher": [
+					"$eslint-stylish"
+			]
+		},
+		{
+			"label": "Prolife: PyLint",
+			"group": "none",
+			"type": "npm",
+			"script": "py:lint prolife",
+			"problemMatcher": {
+				"fileLocation": ["relative", "${workspaceRoot}/src/django/"],
+				"owner": "python",
+				"source": "pylint",
+				"pattern": {
+					"regexp": "^(.+):(\\d+):(\\d+):(\\w+):(.*):(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"code": 5,
+					"message": 6
+				}
+			}
+		},
+
+
+
+
+
+		{
+			"label": "Reoplan: JsWatch",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"type": "npm",
+			"script": "watch --reoplan",
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"isBackground": false,
+			"problemMatcher": {
+				"owner": "webpack",
+				"fileLocation": ["relative", "${workspaceRoot}"],
+				"severity": "error",
+				"pattern": [
+					{
+						"regexp": "ERROR in (.*)",	
+						"file" : 1 
+					},
+					{
+						"regexp": "\\((\\d+),(\\d+)\\):(.*)",
+						"line":1,
+						"column": 2,
+						"message": 3
+					}
+				],
+				"background": {
+					"beginsPattern": "File change detected. Starting incremental compilation...",
+					"endsPattern": "Compilation complete. Watching for file changes."
+				}
+			}
+		},
+		{
+			"label": "Reoplan: JsLint",
+			"group": "none",
+			"type": "npm",
+			"script": "js:lint --reoplan",
+			"problemMatcher": [
+					"$eslint-stylish"
+			]
+		},
+		{
+			"label": "Reoplan: PyLint",
+			"group": "none",
+			"type": "npm",
+			"script": "py:lint reoplan",
+			"problemMatcher": {
+				"fileLocation": ["relative", "${workspaceRoot}/src/django/"],
+				"owner": "python",
+				"source": "pylint",
+				"pattern": {
+					"regexp": "^(.+):(\\d+):(\\d+):(\\w+):(.*):(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"code": 5,
+					"message": 6
+				}
+			}
+		},
+
+		{
+			"label": "Coinarchive: JsLint",
+			"group": "none",
+			"type": "npm",
+			"script": "js:lint --coinarchive",
+			"problemMatcher": [
+					"$eslint-stylish"
+			]
+		},
+		{
+			"label": "Coinarchive: PyLint",
+			"group": "none",
+			"type": "npm",
+			"script": "py:lint coinarchive",
+			"problemMatcher": {
+				"fileLocation": ["relative", "${workspaceRoot}/src/django/"],
+				"owner": "python",
+				"source": "pylint",
+				"pattern": {
+					"regexp": "^(.+):(\\d+):(\\d+):(\\w+):(.*):(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"code": 5,
+					"message": 6
+				}
+			}
+		},
+
+		{
+			"label": "Soildat: JsLint",
+			"group": "none",
+			"type": "npm",
+			"script": "js:lint --soildat",
+			"problemMatcher": [
+					"$eslint-stylish"
+			]
+		},
+		{
+			"label": "Soildat: PyLint",
+			"group": "none",
+			"type": "npm",
+			"script": "py:lint soildat",
+			"problemMatcher": {
+				"fileLocation": ["relative", "${workspaceRoot}/src/django/"],
+				"owner": "python",
+				"source": "pylint",
+				"pattern": {
+					"regexp": "^(.+):(\\d+):(\\d+):(\\w+):(.*):(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"code": 5,
+					"message": 6
+				}
+			}
+		},
+		{
+			"label": "Spielwiese: JsLint",
+			"group": "none",
+			"type": "npm",
+			"script": "js:lint --spielwiese",
+			"problemMatcher": [
+					"$eslint-stylish"
+			]
+		},
+	]
+}
